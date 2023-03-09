@@ -1,0 +1,26 @@
+{% macro books_macro(books)%}
+{% for book in books %}
+
+<div class="card text-center col-md-4 mt-3 m-2 col-sm-6 p-0">
+  <div class="card-header p-0">
+  
+    <img  class="img-fluid" src="{{ url_for('static', filename = 'images/'+book.image) }}" alt="">
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{book['title']}}
+    </h5>
+    <p class="card-text">{{book.description}}</p>
+    <p class="card-text">{{book.rate}}</p>
+    <button class="btn btn-outline-info" >
+      <a href={{url_for("bookDetail" , id=book.id)}} class="buy">view book</a>
+    </button>
+  </div>
+  
+  
+      
+  <div class="card-footer text-muted">
+   {{book.created}}
+  </div>
+</div>
+{% endfor %}
+{%endmacro%}

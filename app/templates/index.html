@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<!--MAIN-->
+<main class="hero">
+    <section class="text-center hero">
+        <em>Eco friendly</em>
+        <em>Voala {{name}}</em>
+        <h1 class="title m-5">We like to think of our wares as full sensory experiences!</h1>
+        <a  class="btn1 btn btn-outline-info  qm-5" href="{{url_for("home" , name="dana")}}">Get Start </a>
+    </section>
+</main>
+{% endblock %}

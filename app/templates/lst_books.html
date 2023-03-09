@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block main %}
+<div class="row">
+
+{%import 'BooksMacro.html' as lst_books%}
+    {{lst_books.books_macro(books)}}
+
+</div>
+{% endblock %}
