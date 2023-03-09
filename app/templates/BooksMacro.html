@@ -12,7 +12,7 @@
     <p class="card-text">{{book.description}}</p>
     <p class="card-text">{{book.rate}}</p>
     <button class="btn btn-outline-info" >
-      <a href={{url_for("bookDetail" , id=book.id)}} class="buy">view book</a>
+      <a href={{url_for("books.bookDetail" , id=book.id)}} class="buy">view book</a>
     </button>
   </div>
   

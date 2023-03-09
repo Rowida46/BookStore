@@ -1,6 +1,7 @@
-from .models import Books
 # @app.route("/books", endpoint="lst_books")
 from flask import render_template
+
+from app.authers import auth_blueprint
 
 # <a href={{url_for("deleteBook" , id=book.id)}} class="buy">Delete Bppk</a>
 

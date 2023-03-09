@@ -25,11 +25,17 @@ def create_app(config_name):
     # add migration
     migrate = Migrate(app, db)
 
+    # register blueprint
+
+    from app.books import books_blueprint
+    # from app.authers import auths_blueprint
+    app.register_blueprint(books_blueprint)
+    # app.register_blueprint(auths_blueprint)
     # route of books
-    from app.books.views import home, get_books, bookDetail
-    app.add_url_rule('/', view_func=home)
-    app.add_url_rule('/lst_books', view_func=get_books)
-    app.add_url_rule('/oneBook/<id>', view_func=bookDetail)
+    # from app.books.views import home, get_books, bookDetail
+    # app.add_url_rule('/', view_func=home)
+    # app.add_url_rule('/lst_books', view_func=get_books)
+    # app.add_url_rule('/oneBook/<id>', view_func=bookDetail)
 
     from app.books.errors import error_view
     # app.error("/notFound", view_func=error_view)
