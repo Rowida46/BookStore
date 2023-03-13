@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block main %}
+
+<div>
+    <form method="POST">
+        {{form.csrf_token}}
+        <div class="mb-3">
+            <div class="form-label"> {{form.title.label}} </div>
+            {{form.title(size=20, value=title, class='form-control')}}
+
+            <p class="text-danger"> {% if errors and errors['title'] %}
+                {{errors['title']}} {%endif%}
+            </p>
+
+        </div>
+        <div class="mb-3">
+            <div class="form-label"> {{form.description.label}} </div>
+            {{form.description( value=description, class='form-control')}}
+
+        </div>
+
+        <div class="mb-3">
+
+            <div class="mb-3" class="form-label"> {{form.rate.label}}
+                {{form.rate( value=rate, class='')}}
+            </div>
+
+        </div>
+        <div class="mb-3">
+            <div class="form-label"> {{form.image.label}} </div>
+            {{form.image( value=image, class='form-control', value=age )}}
+        </div>
+
+        <select id="colors" name="colors">
+            <option value="red">red color</option>
+            {%for auth in authers%}
+            
+            <option value={{auth.id}}>{{auth.name}}</option>
+            {%endfor%}
+        </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</div>
+
+{% endblock %}

@@ -17,3 +17,39 @@ class Book(db.Model):
 
     def __str__(self):
         return f"{self.title}"
+
+    @classmethod
+    def get_all_Books(cls):
+        return cls.query.all()
+
+    @classmethod
+    def get_specific_book(cls, id):
+        return cls.query.get(id)
+
+    def delete_book(self):
+        db.session.delete(self)
+        db.session.commit()
+        return True
+
+    @classmethod
+    def create_newBook(cls, book_new_obj):
+        # newBook = cls(**book_new_obj)
+        db.session.add(book_new_obj)
+        db.session.commit()
+        return book_new_obj
+
+    @classmethod
+    def delete_Book(cls, book_new_obj):
+        # newBook = cls(**book_new_obj)
+        db.session.delete(book_new_obj)
+        db.session.commit()
+        return True
+
+    def update_book(self, updated_data):
+        """  
+         db.session.add(self)
+         db.session.commit()
+         return True
+
+        """
+        pass

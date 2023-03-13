@@ -2,6 +2,11 @@
 
 {% block main %}
 <div class="row">
+    
+<button class="btn btn-outline-info" >
+    <a href={{url_for("books.create_new_book")}} class="buy">Create New Book</a>
+
+</button>
 
 {%import 'BooksMacro.html' as lst_books%}
     {{lst_books.books_macro(books)}}

@@ -9,10 +9,15 @@
   <div class="card-body">
     <h5 class="card-title">{{book['title']}}
     </h5>
-    <p class="card-text">{{book.description}}</p>
-    <p class="card-text">{{book.rate}}</p>
+    <p class="card-text"> Book Auther : {{book.author}}</p>
     <button class="btn btn-outline-info" >
       <a href={{url_for("books.bookDetail" , id=book.id)}} class="buy">view book</a>
+    </button>
+    <button class="btn btn-outline-danger" >
+      <a href={{url_for("books.delete_book" , id=book.id)}} class="buy ">delete book  -> {{book.id}}</a>
+    </button>
+    <button class="btn btn-outline-danger" >
+      <a href={{url_for("books.update_book" , id=book.id)}} class="buy ">update book  -> {{book.id}}</a>
     </button>
   </div>
   
